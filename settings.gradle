@@ -1,1 +1,1 @@
-include ':banklink-sdk', ':sample'
+include ':banklink', ':sample'

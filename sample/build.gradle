@@ -40,7 +40,7 @@ dependencies {
 
   provided libraries.autoValueAnnotations
 
-  compile project(':banklink-sdk')
+  compile project(':banklink')
   compile libraries.butterknife
   compile libraries.constraintLayout
   compile libraries.dagger

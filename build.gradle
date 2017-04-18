@@ -2,12 +2,16 @@
 apply from: 'gradle/dependencies.gradle'
 
 allprojects {
+  group = GROUP
+  version = VERSION_NAME
+
   buildscript {
     repositories {
       jcenter()
     }
     dependencies {
       classpath libraries.androidGradlePlugin
+      classpath libraries.androidMavenGradlePlugin
       classpath libraries.bintrayGradlePlugin
       classpath libraries.retrolambdaPlugin
 

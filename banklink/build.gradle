@@ -1,10 +1,7 @@
-version rootProject.ext.VERSION_NAME
-group rootProject.ext.GROUP
-
 apply plugin: 'com.android.library'
 
 android {
-  resourcePrefix 'banklink_sdk_'
+  resourcePrefix 'banklink_'
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
 
@@ -31,5 +28,4 @@ dependencies {
   testCompile libraries.truth
 }
 
-apply from: rootProject.file('gradle/maven-push.gradle')
 apply from: rootProject.file('gradle/bintray-push.gradle')

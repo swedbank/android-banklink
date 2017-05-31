@@ -11,7 +11,7 @@ Getting Started
 
 ```groovy
 dependencies {
-  compile 'com.swedbank.sdk:banklink-sdk:1.0.0'
+  compile 'com.swedbank.sdk:banklink:1.0.0'
 }
 ```
 

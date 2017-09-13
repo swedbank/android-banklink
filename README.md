@@ -78,6 +78,32 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
+**Swedbank app availability checks**
+
+Swedbank app of version **6.8** or later is required to be installed on user device. Swedbank Banklink Android SDK provides a possibility to detect such cases and make some workarounds for that.    
+
+One option is to try to start activity from _Intent_ and handle exception 
+
+```java
+// obtain signed packet map
+try {
+  Intent intent = eeClient.createBanklinkIntent(packetMap);
+  startActivityForResult(intent, BANKLINK_REQUEST_CODE);
+} catch (ActivityNotFoundException e) {
+  // Swedbank app not installed. Try to send Banklink packet parameters to Swedbank banklink server over HTTP protocol using browser or WebView.
+}
+```
+
+
+Another option is to explicitly check whether suitable application is installed or not.
+
+```java
+if(!client.isSupportedSwedbankAppInstalled()) {
+  // Swedbank app not installed. Try to send Banklink packet parameters to Swedbank banklink server over HTTP protocol using browser or WebView..
+} 
+```
+See [BanklinkClient](https://swedbank.github.io/android-banklink/javadoc/com/swedbank/sdk/banklink/BanklinkClient.html) Javadoc for more information.
+ 
 Documentation
 -------------
 
